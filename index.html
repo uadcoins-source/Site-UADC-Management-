@@ -5,26 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UADC Management | Gestion PME, organisation administrative et digitalisation</title>
   <meta name="description" content="UADC Management accompagne les PME, TPE, commerçants structurés et indépendants à Libreville dans l'organisation administrative, le suivi de gestion et la digitalisation progressive." />
- 
   <!-- Sécurité navigateur : limitation des ressources autorisées -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; img-src 'self' data: https://images.unsplash.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-src 'self' https://docs.google.com; form-action 'self' https://docs.google.com; upgrade-insecure-requests;">
-
-  <!-- Bandeau cookies Cookiebot -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d67af47e-b6ff-4df5-80c2-b756c6a050ea" data-blockingmode="auto" type="text/javascript"></script>
-
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://consent.cookiebot.com https://consentcdn.cookiebot.com; img-src 'self' data: https://images.unsplash.com https://www.googletagmanager.com https://www.google-analytics.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; style-src 'self' 'unsafe-inline' https://consent.cookiebot.com https://consentcdn.cookiebot.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-src 'self' https://docs.google.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; form-action 'self' https://docs.google.com; upgrade-insecure-requests;">
   <!-- Confidentialité : limite les informations envoyées aux sites externes -->
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVQ48MTQVT"></script>
-  <script>
+  <!-- Bandeau cookies Cookiebot -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d67af47e-b6ff-4df5-80c2-b756c6a050ea" data-blockingmode="auto" type="text/javascript"></script>
+  <!-- Google Analytics 4 : déclenché uniquement après consentement statistiques -->
+  <script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=G-BVQ48MTQVT"></script>
+  <script type="text/plain" data-cookieconsent="statistics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-BVQ48MTQVT');
+    gtag('config', 'G-BVQ48MTQVT', { 'anonymize_ip': true });
   </script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -213,13 +207,13 @@
         <h2>Vous souhaitez remettre de l’ordre dans la gestion de votre PME ?</h2>
         <p>
           Envoyez une demande de diagnostic. UADC Management vous répondra pour comprendre votre besoin,
-          votre organisation actuelle et le type d’accompagnement le plus <div class="contact-actions">
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:Support.UADC@gmail.com?subject=Demande%20de%20diagnostic%20UADC%20Management&body=Bonjour%2C%0A%0AJe%20souhaite%20%C3%AAtre%20contact%C3%A9%28e%29%20pour%20un%20diagnostic%20de%20gestion%20PME.%0A%0ANom%20%3A%0AEntreprise%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0ABesoin%20principal%20%3A%0A%0AMerci.">Envoyer un email</a>
-          <a class="btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" referrerpolicy="strict-origin-when-cross-origin">Formulaire Google</a>
-        </div>
-
-        <p class="email">Support.UADC@gmail.com</p>
+          votre organisation actuelle et le type d’accompagnement le plus adapté.
+        </p>
+     <div class="contact-actions">
+      <a class="btn primary" href="mailto:Support.UADC@gmail.com?subject=Demande%20de%20diagnostic%20UADC%20Management&body=Bonjour%2C%0A%0AJe%20souhaite%20%C3%AAtre%20contact%C3%A9%28e%29%20pour%20un%20diagnostic%20de%20gestion%20PME.%0A%0ANom%20%3A%0AEntreprise%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0ABesoin%20principal%20%3A%0A%0AMerci.">Envoyer un email</a>
+      <a class="btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" referrerpolicy="strict-origin-when-cross-origin">Formulaire Google</a>
+    </div>
+    <p class="email">Support.UADC@gmail.com</p>
       </div>
     </section>
   </main>
