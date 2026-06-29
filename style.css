@@ -640,3 +640,21 @@ color: var(–green-dark);
 font-weight: 800;
 }
 }
+
+.footer-linkedin-button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 26px;
+  border: 1px solid #b8d8c0;
+  border-radius: 30px;
+  color: #b8d8c0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-linkedin-button:hover {
+  background-color: #b8d8c0;
+  color: #003d14;
+}
