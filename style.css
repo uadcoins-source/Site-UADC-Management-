@@ -395,3 +395,66 @@ h3 {
     display: none;
   }
 }
+
+/* =========================================================
+   BARRE UADC MANAGEMENT FIXE AU SCROLL
+   À ajouter à la fin du style.css
+   ========================================================= */
+
+.site-header {
+  padding-top: 88px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 22px 50px;
+  z-index: 4000;
+  background: rgba(6, 61, 20, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 92px;
+  right: 24px;
+  z-index: 4001;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-top: 92px;
+  }
+
+  .nav {
+    padding: 22px 50px;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    padding-top: 92px;
+  }
+
+  .nav {
+    padding: 22px 42px;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .mobile-menu {
+    top: 92px;
+    right: 24px;
+  }
+}
