@@ -458,3 +458,17 @@ h3 {
     right: 24px;
   }
 }
+
+/* =========================================================
+   COULEUR VERTE DU LOGO DANS LA BARRE FIXE
+   À ajouter à la fin du style.css
+   ========================================================= */
+
+.nav .logo,
+.nav .logo span {
+  color: #7ddc91;
+}
+
+.menu-toggle span {
+  background: #7ddc91;
+}
