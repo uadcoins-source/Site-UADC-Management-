@@ -1,256 +1,830 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UADC Management | Gestion PME, organisation administrative et digitalisation</title>
-  <meta name="description" content="UADC Management accompagne les PME, TPE, commerçants structurés et indépendants à Libreville dans l'organisation administrative, le suivi de gestion et la digitalisation progressive." />
-  <!-- Sécurité navigateur : limitation des ressources autorisées -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://consent.cookiebot.com https://consentcdn.cookiebot.com; img-src 'self' data: https://images.unsplash.com https://www.googletagmanager.com https://www.google-analytics.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; style-src 'self' 'unsafe-inline' https://consent.cookiebot.com https://consentcdn.cookiebot.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-src 'self' https://docs.google.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; form-action 'self' https://docs.google.com; upgrade-insecure-requests;">
-  <!-- Confidentialité : limite les informations envoyées aux sites externes -->
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <!-- Bandeau cookies Cookiebot -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d67af47e-b6ff-4df5-80c2-b756c6a050ea" data-blockingmode="auto" type="text/javascript"></script>
-  <!-- Google Analytics 4 : déclenché uniquement après consentement statistiques -->
-  <script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=G-BVQ48MTQVT"></script>
-  <script type="text/plain" data-cookieconsent="statistics">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UADC Management | Gestion administrative des PME au Gabon</title>
+
+  <meta
+    name="description"
+    content="UADC Management aide les PME, commerçants et indépendants au Gabon à organiser leurs documents, suivre leurs factures et structurer leur gestion administrative."
+  >
+
+  <link
+    rel="canonical"
+    href="https://uadcoins-source.github.io/Site-UADC-Management-/"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="UADC Management">
+
+  <meta
+    property="og:title"
+    content="UADC Management | Gestion administrative des PME au Gabon"
+  >
+
+  <meta
+    property="og:description"
+    content="Reprenez le contrôle de vos documents, factures, relances et tableaux de bord."
+  >
+
+  <meta
+    property="og:url"
+    content="https://uadcoins-source.github.io/Site-UADC-Management-/"
+  >
+
+  <meta name="twitter:card" content="summary">
+
+  <meta
+    name="twitter:title"
+    content="UADC Management | Gestion administrative des PME au Gabon"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Organisation documentaire, suivi des factures, relances et digitalisation progressive."
+  >
+
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline'
+        https://www.googletagmanager.com
+        https://consent.cookiebot.com
+        https://consentcdn.cookiebot.com;
+      connect-src 'self'
+        https://www.google-analytics.com
+        https://analytics.google.com
+        https://region1.google-analytics.com
+        https://stats.g.doubleclick.net
+        https://consent.cookiebot.com
+        https://consentcdn.cookiebot.com;
+      img-src 'self' data:
+        https://images.unsplash.com
+        https://www.googletagmanager.com
+        https://www.google-analytics.com
+        https://consent.cookiebot.com
+        https://consentcdn.cookiebot.com;
+      style-src 'self' 'unsafe-inline'
+        https://consent.cookiebot.com
+        https://consentcdn.cookiebot.com;
+      font-src 'self' data:;
+      object-src 'none';
+      base-uri 'self';
+      frame-src 'self'
+        https://docs.google.com
+        https://consent.cookiebot.com
+        https://consentcdn.cookiebot.com;
+      form-action 'self' https://docs.google.com;
+      upgrade-insecure-requests;
+    "
+  >
+
+  <meta
+    name="referrer"
+    content="strict-origin-when-cross-origin"
+  >
+
+  <script
+    id="Cookiebot"
+    src="https://consent.cookiebot.com/uc.js"
+    data-cbid="d67af47e-b6ff-4df5-80c2-b756c6a050ea"
+    data-blockingmode="auto"
+    type="text/javascript"
+  ></script>
+
+  <script
+    type="text/plain"
+    data-cookieconsent="statistics"
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-BVQ48MTQVT"
+  ></script>
+
+  <script
+    type="text/plain"
+    data-cookieconsent="statistics"
+  >
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
-    gtag('config', 'G-BVQ48MTQVT', { 'anonymize_ip': true });
+
+    gtag('config', 'G-BVQ48MTQVT', {
+      anonymize_ip: true
+    });
   </script>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "UADC Management",
+    "url": "https://uadcoins-source.github.io/Site-UADC-Management-/",
+    "email": "Support.UADC@gmail.com",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Gabon"
+    },
+    "description": "Services B2B d’organisation administrative, de suivi de gestion simple et de digitalisation progressive."
+  }
+  </script>
 </head>
 
 <body>
+
   <header class="site-header">
+
     <nav class="nav">
-      <div class="logo">UADC <span>Management</span></div>
 
-      <a href="#contact" class="nav-cta">Demander un diagnostic</a>
+      <div class="logo">
+        UADC <span>Management</span>
+      </div>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform"
+        class="nav-cta js-track-evaluation"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Évaluer mon organisation
+      </a>
+
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
+
     </nav>
 
     <div id="mobile-menu" class="mobile-menu">
-      <a href="#probleme">Problème fréquent</a>
-      <a href="#approche">Notre approche</a>
-      <a href="#offres">Offre de lancement</a>
-      <a href="#pour-qui">Pour qui ?</a>
-      <a href="#outils">Outils utilisés</a>
-      <a href="#contact">Contact</a>
+
+      <a href="#probleme">
+        Problèmes fréquents
+      </a>
+
+      <a href="#approche">
+        Notre approche
+      </a>
+
+      <a href="#resultats">
+        Résultats attendus
+      </a>
+
+      <a href="#offres">
+        Prestations
+      </a>
+
+      <a href="#pour-qui">
+        Pour qui ?
+      </a>
+
+      <a href="#outils">
+        Outils
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </div>
 
     <section class="hero">
+
       <div class="hero-content">
-        <p class="eyebrow">Gestion PME • Organisation administrative • Suivi simple</p>
-        <h1>Aidez votre PME à mieux gérer ses documents, factures et relances.</h1>
+
+        <p class="eyebrow">
+          Gestion administrative des PME au Gabon
+        </p>
+
+        <h1>
+          Reprenez le contrôle de la gestion administrative de votre PME.
+        </h1>
+
         <p class="hero-text">
-          UADC Management accompagne les PME, commerçants structurés,
-          indépendants et jeunes sociétés dans l’organisation administrative,
-          le suivi de gestion et la digitalisation progressive.
+          UADC Management aide les PME, commerçants et indépendants au Gabon
+          à organiser leurs documents, suivre leurs factures et structurer
+          leur gestion, sans recruter immédiatement du personnel
+          administratif supplémentaire.
         </p>
+
+        <ul
+          class="hero-benefits"
+          aria-label="Principaux bénéfices"
+        >
+          <li>Documents centralisés</li>
+          <li>Factures et paiements suivis</li>
+          <li>Relances mieux organisées</li>
+          <li>Tableau de bord simple</li>
+          <li>Digitalisation progressive</li>
+        </ul>
+
         <div class="hero-actions">
-          <a href="#contact" class="btn primary">Demander un diagnostic</a>
-          <a href="#offres" class="btn secondary">Voir les offres</a>
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform"
+            class="btn primary js-track-evaluation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Évaluer l’organisation de mon entreprise
+          </a>
+
+          <a
+            href="#offres"
+            class="btn secondary"
+          >
+            Découvrir les prestations
+          </a>
+
         </div>
-        <p class="note">
-          Services B2B non crypto : aucune activité de trading, investissement,
-          token ou promesse de rendement.
+
+        <p class="cta-reassurance">
+          Questionnaire de 2 à 4 minutes — sans engagement —
+          réponse personnalisée après analyse.
         </p>
+
+        <p class="note">
+          Services B2B non crypto : aucune activité de trading,
+          investissement, token ou promesse de rendement.
+        </p>
+
       </div>
+
     </section>
+
   </header>
 
   <main>
-    <section id="probleme" class="section problem">
+
+    <section
+      id="probleme"
+      class="section problem"
+    >
+
       <div class="section-heading">
-        <p class="eyebrow">Problème fréquent</p>
-        <h2>Votre activité avance, mais votre organisation ne suit pas toujours.</h2>
+
+        <p class="eyebrow">
+          Problèmes fréquents
+        </p>
+
+        <h2>
+          Votre activité avance, mais votre organisation ne suit pas toujours.
+        </h2>
+
       </div>
 
       <div class="cards three">
+
         <article class="card">
-          <h3>Documents dispersés</h3>
-          <p>Contrats, devis, factures, reçus et dossiers clients sont parfois difficiles à retrouver rapidement.</p>
+
+          <h3>
+            Documents dispersés
+          </h3>
+
+          <p>
+            Vous perdez du temps à rechercher vos devis, factures,
+            contrats, reçus et dossiers clients.
+          </p>
+
         </article>
 
         <article class="card">
-          <h3>Factures mal suivies</h3>
-          <p>Les paiements, relances et échéances peuvent être suivis de manière irrégulière ou uniquement par mémoire.</p>
+
+          <h3>
+            Factures mal suivies
+          </h3>
+
+          <p>
+            Les paiements et relances ne sont pas suivis régulièrement,
+            ce qui peut retarder les encaissements.
+          </p>
+
         </article>
 
         <article class="card">
-          <h3>Manque de visibilité</h3>
-          <p>Sans tableau de bord simple, le dirigeant manque de recul sur les priorités et les actions à suivre.</p>
+
+          <h3>
+            Manque de visibilité
+          </h3>
+
+          <p>
+            Vous ne disposez pas d’un tableau simple pour identifier
+            les urgences, les impayés et les actions prioritaires.
+          </p>
+
         </article>
+
       </div>
+
     </section>
 
-    <section id="approche" class="section solution">
+    <section
+      id="approche"
+      class="section solution"
+    >
+
       <div class="section-heading">
-        <p class="eyebrow">Notre approche</p>
-        <h2>Une méthode simple : diagnostiquer, remettre de l’ordre, suivre dans la durée.</h2>
+
+        <p class="eyebrow">
+          Notre approche
+        </p>
+
+        <h2>
+          Une méthode simple : diagnostiquer, remettre de l’ordre,
+          suivre dans la durée.
+        </h2>
+
       </div>
 
       <div class="steps">
+
         <div class="step">
+
           <span>01</span>
-          <h3>Diagnostic</h3>
-          <p>Analyse de votre organisation, de vos documents, de vos outils et de vos difficultés.</p>
+
+          <h3>
+            Diagnostic
+          </h3>
+
+          <p>
+            Analyse de votre organisation, de vos documents,
+            de vos outils et de vos difficultés.
+          </p>
+
         </div>
 
         <div class="step">
+
           <span>02</span>
-          <h3>Mise en ordre</h3>
-          <p>Classement, dossiers, tableaux de suivi et procédures simples pour clarifier votre gestion.</p>
+
+          <h3>
+            Mise en ordre
+          </h3>
+
+          <p>
+            Classement, dossiers, tableaux de suivi et procédures simples
+            pour clarifier votre gestion.
+          </p>
+
         </div>
 
         <div class="step">
+
           <span>03</span>
-          <h3>Suivi mensuel</h3>
-          <p>Suivi factures, paiements, relances et tableau de bord mensuel pour garder une visibilité régulière.</p>
+
+          <h3>
+            Suivi mensuel
+          </h3>
+
+          <p>
+            Suivi des factures, paiements, relances
+            et tableau de bord mensuel.
+          </p>
+
         </div>
 
         <div class="step">
+
           <span>04</span>
-          <h3>Digitalisation progressive</h3>
-          <p>Google Drive, Google Sheets, modèles, WhatsApp Business et automatisations simples quand c’est utile.</p>
+
+          <h3>
+            Digitalisation progressive
+          </h3>
+
+          <p>
+            Google Drive, Google Sheets, modèles,
+            WhatsApp Business et automatisations simples.
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="offres" class="section offers">
+    <section
+      id="resultats"
+      class="section results"
+    >
+
       <div class="section-heading">
-        <p class="eyebrow">Offres de lancement</p>
-        <h2>Des prestations claires, adaptées au niveau réel de votre PME.</h2>
+
+        <p class="eyebrow">
+          Résultats attendus
+        </p>
+
+        <h2>
+          Ce que votre entreprise pourra obtenir.
+        </h2>
+
+      </div>
+
+      <div class="results-grid">
+
+        <div class="result-item">
+          Une organisation documentaire claire
+        </div>
+
+        <div class="result-item">
+          Une vision actualisée des factures et paiements
+        </div>
+
+        <div class="result-item">
+          Un système de relance structuré
+        </div>
+
+        <div class="result-item">
+          Des tableaux adaptés à votre activité
+        </div>
+
+        <div class="result-item">
+          Des procédures simples pour votre équipe
+        </div>
+
+        <div class="result-item">
+          Une digitalisation progressive et maîtrisée
+        </div>
+
+      </div>
+
+    </section>
+
+    <section
+      id="offres"
+      class="section offers"
+    >
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Offres de lancement
+        </p>
+
+        <h2>
+          Des prestations claires, adaptées au niveau réel de votre PME.
+        </h2>
+
       </div>
 
       <div class="pricing">
+
         <article class="price-card">
-          <h3>Diagnostic Gestion PME</h3>
-          <p>Audit organisationnel, documents, factures, devis, relances et recommandations.</p>
-          <strong>400 000 FCFA</strong>
+
+          <h3>
+            Diagnostic Gestion PME
+          </h3>
+
+          <p>
+            Audit organisationnel, documents, factures,
+            devis, relances et recommandations.
+          </p>
+
+          <strong>
+            400 000 FCFA
+          </strong>
+
         </article>
 
         <article class="price-card">
-          <h3>Mise en ordre simple</h3>
-          <p>Classement, dossiers clients/fournisseurs, tableau de suivi factures/devis et procédures simples.</p>
-          <strong>450 000 FCFA</strong>
+
+          <h3>
+            Mise en ordre simple
+          </h3>
+
+          <p>
+            Classement, dossiers clients et fournisseurs,
+            tableaux de suivi et procédures simples.
+          </p>
+
+          <strong>
+            450 000 FCFA
+          </strong>
+
         </article>
 
         <article class="price-card featured">
-          <h3>Mise en ordre complète</h3>
-          <p>Organisation approfondie, plan d’amélioration, outils de suivi et structuration documentaire.</p>
-          <strong>600 000 FCFA</strong>
+
+          <h3>
+            Mise en ordre complète
+          </h3>
+
+          <p>
+            Organisation approfondie, plan d’amélioration,
+            outils de suivi et structuration documentaire.
+          </p>
+
+          <strong>
+            600 000 FCFA
+          </strong>
+
         </article>
 
         <article class="price-card">
-          <h3>Suivi mensuel PME</h3>
-          <p>Suivi factures, paiements, relances, tableau de bord mensuel et résumé de gestion.</p>
-          <strong>250 000 FCFA / mois</strong>
+
+          <h3>
+            Suivi mensuel PME
+          </h3>
+
+          <p>
+            Suivi des factures, paiements, relances,
+            tableau de bord mensuel et résumé de gestion.
+          </p>
+
+          <strong>
+            250 000 FCFA / mois
+          </strong>
+
         </article>
+
       </div>
 
       <p class="disclaimer">
-        Tarifs indicatifs de lancement à valider selon le périmètre réel, la complexité de la mission et les validations comptables, fiscales et juridiques.
+        Tarifs indicatifs de lancement à valider selon le périmètre réel,
+        la complexité de la mission et les validations comptables,
+        fiscales et juridiques.
       </p>
+
     </section>
 
-    <section id="pour-qui" class="section target">
+    <section
+      id="pour-qui"
+      class="section target"
+    >
+
       <div class="section-heading">
-        <p class="eyebrow">Pour qui ?</p>
-        <h2>UADC Management s’adresse aux structures qui veulent mieux gérer leur activité.</h2>
+
+        <p class="eyebrow">
+          Pour qui ?
+        </p>
+
+        <h2>
+          UADC Management s’adresse aux structures
+          qui veulent mieux gérer leur activité.
+        </h2>
+
       </div>
 
       <div class="chips">
+
         <span>PME de services</span>
         <span>Commerçants structurés</span>
         <span>Jeunes sociétés</span>
         <span>Indépendants</span>
         <span>Prestataires</span>
+
       </div>
+
     </section>
 
-    <section id="outils" class="section tools">
+    <section
+      id="outils"
+      class="section tools"
+    >
+
       <div class="section-heading">
-        <p class="eyebrow">Outils utilisés quand nécessaire</p>
-        <h2>Des outils simples, accessibles et utiles.</h2>
+
+        <p class="eyebrow">
+          Outils utilisés quand nécessaire
+        </p>
+
+        <h2>
+          Des outils simples, accessibles et utiles.
+        </h2>
+
       </div>
 
       <div class="cards three">
+
         <article class="card">
-          <h3>Google Sheets</h3>
-          <p>Tableaux de suivi devis, factures, paiements, relances et indicateurs simples.</p>
+
+          <h3>
+            Google Sheets
+          </h3>
+
+          <p>
+            Tableaux de suivi des devis, factures, paiements,
+            relances et indicateurs simples.
+          </p>
+
         </article>
 
         <article class="card">
-          <h3>Google Drive</h3>
-          <p>Classement documentaire, dossiers clients/fournisseurs et organisation des pièces utiles.</p>
+
+          <h3>
+            Google Drive
+          </h3>
+
+          <p>
+            Classement documentaire et organisation
+            des dossiers clients et fournisseurs.
+          </p>
+
         </article>
 
         <article class="card">
-          <h3>Google Analytics</h3>
-          <p>Suivi des visites du site, sources de trafic et demandes de contact.</p>
+
+          <h3>
+            WhatsApp Business et outils adaptés
+          </h3>
+
+          <p>
+            Communication, rappels, échanges de documents
+            et automatisations simples.
+          </p>
+
         </article>
+
       </div>
+
     </section>
 
-    <section id="contact" class="section contact">
+    <section
+      id="contact"
+      class="section contact"
+    >
+
       <div class="contact-box">
-        <p class="eyebrow">Contact</p>
-        <h2>Vous souhaitez remettre de l’ordre dans la gestion de votre PME ?</h2>
-        <p>
-          Envoyez une demande de diagnostic. UADC Management vous répondra pour comprendre votre besoin,
-          votre organisation actuelle et le type d’accompagnement le plus adapté.
+
+        <p class="eyebrow">
+          Évaluation initiale
         </p>
-     <div class="contact-actions">
-      <a class="btn primary" href="mailto:Support.UADC@gmail.com?subject=Demande%20de%20diagnostic%20UADC%20Management&body=Bonjour%2C%0A%0AJe%20souhaite%20%C3%AAtre%20contact%C3%A9%28e%29%20pour%20un%20diagnostic%20de%20gestion%20PME.%0A%0ANom%20%3A%0AEntreprise%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0ABesoin%20principal%20%3A%0A%0AMerci.">Envoyer un email</a>
-      <a class="btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" referrerpolicy="strict-origin-when-cross-origin">Formulaire Google</a>
-    </div>
-    <p class="email">Support.UADC@gmail.com</p>
+
+        <h2>
+          Votre organisation administrative vous fait-elle perdre
+          du temps ou de la visibilité ?
+        </h2>
+
+        <p>
+          Répondez à quelques questions sur votre entreprise,
+          vos outils et vos difficultés. UADC Management étudiera
+          votre situation afin de déterminer l’accompagnement
+          le plus pertinent.
+        </p>
+
+        <div class="contact-actions">
+
+          <a
+            class="btn primary js-track-evaluation"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScR6LxqJISnzY4DVmSsGfaWEli_IUTiNq7CcCTO1LoDNJifmg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Commencer l’évaluation
+          </a>
+
+          <a
+            class="btn secondary js-track-email"
+            href="mailto:Support.UADC@gmail.com?subject=Question%20sur%20UADC%20Management"
+          >
+            Poser une question par email
+          </a>
+
+        </div>
+
+        <p class="email">
+          Support.UADC@gmail.com
+        </p>
+
       </div>
+
     </section>
+
   </main>
 
   <footer class="footer">
-  <p>© 2026 UADC Management — Services B2B de gestion PME, organisation administrative et digitalisation simple.</p>
-  <p class="small">Document commercial de présentation. Informations juridiques, fiscales et contractuelles à valider avant usage officiel.</p>
-  <p class="small">
-    <a href="politique-confidentialite.html">Politique de confidentialité</a>
-    ·
-    <a href="politique-confidentialite.html#cookies">Cookies / mesure d’audience</a>
-    ·
-    <a href="politique-confidentialite.html#mentions-legales">Mentions légales</a>
-  </p>
-  
-  <a 
-    href="https://www.linkedin.com/in/alexandre-obende-959710419?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="footer-linkedin-button"
-  >
-    LinkedIn : UADC Management
-  </a>
-</footer>
 
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+    <p>
+      © 2026 UADC Management — Services B2B de gestion PME,
+      organisation administrative et digitalisation simple.
+    </p>
 
-  menuToggle.addEventListener('click', function () {
-    mobileMenu.classList.toggle('open');
-  });
+    <p class="small">
+      Document commercial de présentation.
+      Informations juridiques, fiscales et contractuelles
+      à valider avant usage officiel.
+    </p>
 
-  mobileMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
+    <p class="small">
+
+      <a href="politique-confidentialite.html">
+        Politique de confidentialité
+      </a>
+
+      ·
+
+      <a href="politique-confidentialite.html#cookies">
+        Cookies / mesure d’audience
+      </a>
+
+      ·
+
+      <a href="politique-confidentialite.html#mentions-legales">
+        Mentions légales
+      </a>
+
+    </p>
+
+    <a
+      href="https://www.linkedin.com/in/alexandre-obende-959710419?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer-linkedin-button"
+    >
+      LinkedIn : UADC Management
+    </a>
+
+  </footer>
+
+  <script>
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', function () {
+
+      const isOpen = mobileMenu.classList.toggle('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
     });
-  });
- </script>
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        mobileMenu.classList.remove('open');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      });
+
+    });
+
+    function trackEvent(eventName, parameters) {
+
+      if (typeof window.gtag === 'function') {
+
+        window.gtag(
+          'event',
+          eventName,
+          parameters || {}
+        );
+
+      }
+
+    }
+
+    document
+      .querySelectorAll('.js-track-evaluation')
+      .forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+          trackEvent('evaluation_click', {
+            link_text: link.textContent.trim(),
+            link_url: link.href
+          });
+
+        });
+
+      });
+
+    document
+      .querySelectorAll('.js-track-email')
+      .forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+          trackEvent('email_click', {
+            link_text: link.textContent.trim()
+          });
+
+        });
+
+      });
+
+  </script>
+
 </body>
 </html>
