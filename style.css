@@ -763,3 +763,274 @@ html {
   }
 
 }
+
+/* =========================================================
+   UADC MANAGEMENT — FINALISATION V1.1 À V1.9
+   Ajouter uniquement à la fin du fichier style.css
+   ========================================================= */
+
+/* V1.8 — Empêche la barre fixe de masquer les titres */
+section[id] {
+  scroll-margin-top: 115px;
+}
+
+/* V1.7 — Le logo reste visuellement identique comme lien */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* V1.9 — Boutons plus dynamiques */
+.btn,
+.nav-cta {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active,
+.nav-cta:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.contact .btn.primary:hover {
+  box-shadow: 0 12px 30px rgba(11, 93, 30, 0.25);
+}
+
+.btn:focus-visible,
+.nav-cta:focus-visible,
+.logo:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 3px solid #7ddc91;
+  outline-offset: 4px;
+}
+
+/* V1.4 — Menu fluide et légèrement flouté */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-12px) scale(0.97);
+  transform-origin: top right;
+
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.mobile-menu a {
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus-visible {
+  color: var(--green);
+  transform: translateX(4px);
+}
+
+/* V1.5 — Icônes et interactions des cartes problèmes */
+.problem .card {
+  position: relative;
+  padding-top: 74px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.problem .card::before {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.problem .card:nth-child(1)::before {
+  content: "▤";
+}
+
+.problem .card:nth-child(2)::before {
+  content: "₣";
+}
+
+.problem .card:nth-child(3)::before {
+  content: "◉";
+}
+
+.problem .card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(11, 93, 30, 0.28);
+  box-shadow: 0 24px 65px rgba(10, 55, 25, 0.16);
+}
+
+.problem .card:active {
+  transform: scale(0.985);
+}
+
+/* V1.3 — Réassurance plus nette */
+.cta-reassurance {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   OPTIMISATION MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* V1.1 — Hero moins haut */
+  .hero {
+    padding:
+      58px
+      20px
+      72px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 11vw, 52px);
+    line-height: 1.06;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  /* V1.2 — Bénéfices sur deux colonnes */
+  .hero-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .hero-benefits li {
+    width: 100%;
+    min-height: 52px;
+    padding: 9px 11px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .hero-benefits li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    min-height: 56px;
+    padding: 13px 18px;
+  }
+
+  .cta-reassurance {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .note {
+    margin-top: 26px;
+    font-size: 13px;
+  }
+
+  .problem .card {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 390px) {
+
+  .hero {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .hero-benefits li {
+    font-size: 13px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+}
+
+/* Respect du réglage d’accessibilité de l’utilisateur */
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
