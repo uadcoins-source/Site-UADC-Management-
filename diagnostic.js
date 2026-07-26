@@ -15,7 +15,7 @@
 
 const CONFIG = {
   WHATSAPP_NUMBER: '',
-  CALENDLY_URL: '',
+  CALENDLY_URL: 'https://calendly.com/support-uadc/diagnostic-gratuit',
   GUIDE_PDF_URL: '',
   N8N_WEBHOOK_URL: ''
 };
