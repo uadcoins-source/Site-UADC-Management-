@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Évaluer l’organisation de mon entreprise | UADC Management
+  </title>
+
+  <meta
+    name="description"
+    content="Évaluez en 3 à 4 minutes l’organisation administrative de votre entreprise et obtenez une recommandation personnalisée."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow"
+  >
+
+  <meta
+    name="referrer"
+    content="strict-origin-when-cross-origin"
+  >
+
+  <link
+    rel="canonical"
+    href="https://uadcoins-source.github.io/Site-UADC-Management-/diagnostic.html"
+  >
+
+  <link
+    rel="stylesheet"
+    href="diagnostic.css"
+  >
+</head>
+
+<body>
+
+  <header class="diagnostic-header">
+
+    <a
+      href="index.html"
+      class="diagnostic-logo"
+      aria-label="Retour à l’accueil UADC Management"
+    >
+      UADC <span>Management</span>
+    </a>
+
+    <a
+      href="index.html"
+      class="back-link"
+    >
+      Retour au site
+    </a>
+
+  </header>
+
+  <main class="diagnostic-main">
+
+    <section
+      id="diagnostic-app"
+      class="diagnostic-card"
+      aria-live="polite"
+    >
+
+      <!-- ÉCRAN D’INTRODUCTION -->
+
+      <div
+        id="intro-screen"
+        class="screen active"
+      >
+
+        <p class="eyebrow">
+          Évaluation gratuite
+        </p>
+
+        <h1>
+          Évaluez l’organisation administrative de votre entreprise
+        </h1>
+
+        <p class="intro-text">
+          Répondez à 10 questions sur vos documents, vos factures,
+          vos relances et vos outils. Vous obtiendrez ensuite une
+          première recommandation adaptée à votre situation.
+        </p>
+
+        <ul class="intro-benefits">
+          <li>10 questions simples</li>
+          <li>3 à 4 minutes</li>
+          <li>Résultat immédiat</li>
+          <li>Sans engagement</li>
+        </ul>
+
+        <button
+          id="start-button"
+          class="btn primary"
+          type="button"
+        >
+          Commencer l’évaluation
+        </button>
+
+        <p class="privacy-note">
+          Vos réponses seront utilisées uniquement pour analyser votre
+          demande et vous proposer un accompagnement adapté.
+        </p>
+
+      </div>
+
+      <!-- ÉCRAN DU QUESTIONNAIRE -->
+
+      <div
+        id="question-screen"
+        class="screen"
+      >
+
+        <div class="progress-header">
+
+          <p id="progress-label">
+            Question 1 sur 10
+          </p>
+
+          <p id="progress-percent">
+            10 %
+          </p>
+
+        </div>
+
+        <div
+          class="progress-track"
+          aria-hidden="true"
+        >
+          <div
+            id="progress-bar"
+            class="progress-bar"
+          ></div>
+        </div>
+
+        <form
+          id="question-form"
+          novalidate
+        >
+
+          <fieldset class="question-fieldset">
+
+            <legend id="question-title">
+              Question
+            </legend>
+
+            <p
+              id="question-help"
+              class="question-help"
+            ></p>
+
+            <div
+              id="answers-container"
+              class="answers-container"
+            ></div>
+
+          </fieldset>
+
+          <p
+            id="question-error"
+            class="form-error"
+            role="alert"
+          ></p>
+
+          <div class="navigation-buttons">
+
+            <button
+              id="previous-button"
+              class="btn secondary"
+              type="button"
+            >
+              Précédent
+            </button>
+
+            <button
+              id="next-button"
+              class="btn primary"
+              type="submit"
+            >
+              Suivant
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- ÉCRAN DES COORDONNÉES -->
+
+      <div
+        id="contact-screen"
+        class="screen"
+      >
+
+        <p class="eyebrow">
+          Votre résultat est prêt
+        </p>
+
+        <h2>
+          À qui devons-nous attribuer cette évaluation ?
+        </h2>
+
+        <p class="contact-intro">
+          Renseignez vos coordonnées pour afficher votre résultat
+          et permettre à UADC Management de vous contacter si nécessaire.
+        </p>
+
+        <form
+          id="contact-form"
+          class="contact-form"
+          novalidate
+        >
+
+          <div class="form-grid">
+
+            <div class="form-group">
+
+              <label for="firstName">
+                Prénom
+              </label>
+
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                autocomplete="given-name"
+                required
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="lastName">
+                Nom
+              </label>
+
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                autocomplete="family-name"
+                required
+              >
+
+            </div>
+
+            <div class="form-group full-width">
+
+              <label for="company">
+                Nom de l’entreprise
+              </label>
+
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="organization"
+                required
+              >
+
+            </div>
+
+            <div class="form-group full-width">
+
+              <label for="activity">
+                Activité principale
+              </label>
+
+              <input
+                id="activity"
+                name="activity"
+                type="text"
+                placeholder="Exemple : commerce, services, bâtiment…"
+                required
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="city">
+                Ville
+              </label>
+
+              <input
+                id="city"
+                name="city"
+                type="text"
+                autocomplete="address-level2"
+                value="Libreville"
+                required
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="employees">
+                Nombre de personnes
+              </label>
+
+              <select
+                id="employees"
+                name="employees"
+                required
+              >
+                <option value="">
+                  Sélectionner
+                </option>
+
+                <option value="1">
+                  Je travaille seul
+                </option>
+
+                <option value="2-5">
+                  2 à 5 personnes
+                </option>
+
+                <option value="6-20">
+                  6 à 20 personnes
+                </option>
+
+                <option value="21+">
+                  Plus de 20 personnes
+                </option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="phone">
+                Téléphone WhatsApp
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+241…"
+                required
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="email">
+                Adresse e-mail
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+          </div>
+
+          <label class="consent-box">
+
+            <input
+              id="dataConsent"
+              name="dataConsent"
+              type="checkbox"
+              required
+            >
+
+            <span>
+              J’accepte que les informations transmises soient utilisées
+              par UADC Management pour analyser ma demande et me contacter.
+            </span>
+
+          </label>
+
+          <label class="consent-box optional">
+
+            <input
+              id="marketingConsent"
+              name="marketingConsent"
+              type="checkbox"
+            >
+
+            <span>
+              J’accepte de recevoir occasionnellement des conseils
+              et informations de la part d’UADC Management.
+            </span>
+
+          </label>
+
+          <p
+            id="contact-error"
+            class="form-error"
+            role="alert"
+          ></p>
+
+          <div class="navigation-buttons">
+
+            <button
+              id="back-to-questions"
+              class="btn secondary"
+              type="button"
+            >
+              Retour
+            </button>
+
+            <button
+              id="submit-diagnostic"
+              class="btn primary"
+              type="submit"
+            >
+              Voir mon résultat
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- ÉCRAN DE CHARGEMENT -->
+
+      <div
+        id="loading-screen"
+        class="screen loading-screen"
+      >
+
+        <div
+          class="loader"
+          aria-hidden="true"
+        ></div>
+
+        <h2>
+          Analyse de vos réponses…
+        </h2>
+
+        <p>
+          Nous préparons votre recommandation personnalisée.
+        </p>
+
+      </div>
+
+      <!-- ÉCRAN DU RÉSULTAT -->
+
+      <div
+        id="result-screen"
+        class="screen"
+      >
+
+        <p
+          id="result-level-label"
+          class="result-level-label"
+        >
+          Résultat
+        </p>
+
+        <div class="score-wrapper">
+
+          <div
+            id="score-circle"
+            class="score-circle"
+          >
+
+            <strong id="score-value">
+              0
+            </strong>
+
+            <span>
+              / 100
+            </span>
+
+          </div>
+
+        </div>
+
+        <h2 id="result-title">
+          Votre résultat
+        </h2>
+
+        <p
+          id="result-description"
+          class="result-description"
+        ></p>
+
+        <div
+          id="result-findings"
+          class="result-findings"
+        >
+
+          <h3>
+            Points principaux identifiés
+          </h3>
+
+          <ul id="findings-list"></ul>
+
+        </div>
+
+        <div
+          id="result-recommendation"
+          class="result-recommendation"
+        >
+
+          <h3>
+            Notre recommandation
+          </h3>
+
+          <p id="recommendation-text"></p>
+
+        </div>
+
+        <div
+          id="result-actions"
+          class="result-actions"
+        ></div>
+
+        <p class="result-disclaimer">
+          Cette évaluation constitue une première orientation.
+          Elle ne remplace pas le Diagnostic Gestion PME complet.
+        </p>
+
+        <button
+          id="restart-button"
+          class="text-button"
+          type="button"
+        >
+          Recommencer l’évaluation
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="diagnostic-footer">
+
+    <p>
+      © 2026 UADC Management
+    </p>
+
+    <p>
+      <a href="politique-confidentialite.html">
+        Politique de confidentialité
+      </a>
+    </p>
+
+  </footer>
+
+  <script src="diagnostic.js"></script>
+
+</body>
+</html>
