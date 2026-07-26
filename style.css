@@ -1034,3 +1034,290 @@ section[id] {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* =========================================================
+   UADC MANAGEMENT — V2 PARCOURS PSYCHOLOGIQUE
+   Ajouter uniquement à la fin du fichier style.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   HERO V2 — Question d’identification
+   --------------------------------------------------------- */
+
+.hero-question {
+  max-width: 720px;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.hero-question::before {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: #7ddc91;
+}
+
+/* ---------------------------------------------------------
+   INTRODUCTION DES SECTIONS
+   --------------------------------------------------------- */
+
+.section-intro {
+  max-width: 780px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.solution .section-intro {
+  color: #536158;
+}
+
+/* ---------------------------------------------------------
+   CONCLUSION DE LA SECTION PROBLÈMES
+   --------------------------------------------------------- */
+
+.problem-conclusion {
+  position: relative;
+  max-width: 900px;
+  margin: 34px auto 0;
+  padding: 24px 28px 24px 66px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: 20px;
+  background: var(--green-light);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+  box-shadow: 0 12px 35px rgba(10, 55, 25, 0.08);
+}
+
+.problem-conclusion::before {
+  content: "!";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+/* ---------------------------------------------------------
+   NOTRE APPROCHE V2
+   --------------------------------------------------------- */
+
+.solution .section-heading {
+  max-width: 850px;
+  margin-bottom: 42px;
+}
+
+.solution .steps {
+  align-items: stretch;
+}
+
+.solution .step {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: 30px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.solution .step::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -38px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(11, 93, 30, 0.05);
+}
+
+.solution .step:hover {
+  transform: translateY(-5px);
+  border-color: rgba(11, 93, 30, 0.28);
+  box-shadow: 0 24px 65px rgba(10, 55, 25, 0.15);
+}
+
+.solution .step h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 16px;
+}
+
+.solution .step p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------
+   RÉSULTATS — TRANSITION PLUS CONVAINCANTE
+   --------------------------------------------------------- */
+
+.results .section-heading {
+  max-width: 850px;
+}
+
+.results-grid {
+  align-items: stretch;
+}
+
+.result-item {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  line-height: 1.45;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.result-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(11, 93, 30, 0.25);
+  box-shadow: 0 22px 55px rgba(10, 55, 25, 0.14);
+}
+
+/* ---------------------------------------------------------
+   OFFRES — MEILLEURE HIÉRARCHIE
+   --------------------------------------------------------- */
+
+.offers .section-heading {
+  max-width: 850px;
+}
+
+.price-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.price-card p {
+  flex-grow: 1;
+}
+
+.price-card strong {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITÉ ET INTERACTIONS
+   --------------------------------------------------------- */
+
+.problem-conclusion,
+.section-intro,
+.hero-question {
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   TABLETTES
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .solution .step {
+    min-height: auto;
+  }
+
+  .problem-conclusion {
+    max-width: 100%;
+  }
+
+}
+
+/* =========================================================
+   MOBILES
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero-question {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .hero-question::before {
+    width: 44px;
+    margin-bottom: 15px;
+  }
+
+  .section-intro {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .problem-conclusion {
+    margin-top: 28px;
+    padding:
+      58px
+      20px
+      22px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .problem-conclusion::before {
+    top: 20px;
+    left: 20px;
+  }
+
+  .solution .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .solution .step {
+    padding: 28px;
+  }
+
+  .solution .step h3 {
+    font-size: 23px;
+  }
+
+  .result-item {
+    min-height: 100px;
+  }
+
+}
+
+/* =========================================================
+   PETITS MOBILES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero-question {
+    font-size: 16px;
+  }
+
+  .problem-conclusion {
+    font-size: 15px;
+  }
+
+  .solution .step {
+    padding: 25px;
+  }
+
+}
