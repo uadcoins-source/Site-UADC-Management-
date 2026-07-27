@@ -5,18 +5,46 @@
   UADC MANAGEMENT — QUESTIONNAIRE INTELLIGENT V3.0
   ==========================================================
 
-  À renseigner plus tard :
+  Architecture officielle du tunnel :
 
-  1. WHATSAPP_NUMBER
-  2. CALENDLY_URL
-  3. GUIDE_PDF_URL
-  4. N8N_WEBHOOK_URL
+  - Score faible (0 à 39)
+    → Guide PDF gratuit
+    → WhatsApp
+    → CRM via n8n
+    → Relances automatiques
+
+  - Score moyen (40 à 69)
+    → Audit offert de 15 minutes
+    → Réservation via Calendly
+    → CRM via n8n
+    → Relances automatiques
+
+  - Score élevé (70 à 100)
+    → Rendez-vous prioritaire
+    → Réservation via Calendly
+    → CRM via n8n
+    → Relances automatiques
+
+  Configuration restante :
+
+  1. WHATSAPP_NUMBER : à renseigner plus tard
+  2. CALENDLY_AUDIT_URL : configuré
+  3. CALENDLY_PRIORITY_URL : configuré
+  4. GUIDE_PDF_URL : à renseigner
+  5. N8N_WEBHOOK_URL : à renseigner
 */
 
 const CONFIG = {
   WHATSAPP_NUMBER: '',
-  CALENDLY_URL: 'https://calendly.com/support-uadc/diagnostic-gratuit',
+
+  CALENDLY_AUDIT_URL:
+    'https://calendly.com/support-uadc/diagnostic-gratuit',
+
+  CALENDLY_PRIORITY_URL:
+    'https://calendly.com/support-uadc/diagnostic-gratuit',
+
   GUIDE_PDF_URL: '',
+
   N8N_WEBHOOK_URL: ''
 };
 
@@ -350,6 +378,7 @@ function renderQuestion() {
   const question = questions[state.currentQuestionIndex];
 
   const questionNumber = state.currentQuestionIndex + 1;
+
   const progress = Math.round(
     (questionNumber / questions.length) * 100
   );
@@ -374,9 +403,11 @@ function renderQuestion() {
   answersContainer.innerHTML = '';
 
   question.answers.forEach(function (answer, answerIndex) {
-    const label = document.createElement('label');
+    const label =
+      document.createElement('label');
 
-    label.className = 'answer-option';
+    label.className =
+      'answer-option';
 
     const savedAnswer =
       state.answers[question.id];
@@ -388,7 +419,8 @@ function renderQuestion() {
       label.classList.add('selected');
     }
 
-    const input = document.createElement('input');
+    const input =
+      document.createElement('input');
 
     input.type = 'radio';
     input.name = question.id;
@@ -400,30 +432,40 @@ function renderQuestion() {
         savedAnswer.answerIndex === answerIndex
       );
 
-    const marker = document.createElement('span');
+    const marker =
+      document.createElement('span');
 
-    marker.className = 'answer-marker';
+    marker.className =
+      'answer-marker';
+
     marker.setAttribute(
       'aria-hidden',
       'true'
     );
 
-    const text = document.createElement('span');
+    const text =
+      document.createElement('span');
 
-    text.className = 'answer-text';
-    text.textContent = answer.label;
+    text.className =
+      'answer-text';
 
-    input.addEventListener('change', function () {
-      document
-        .querySelectorAll('.answer-option')
-        .forEach(function (option) {
-          option.classList.remove('selected');
-        });
+    text.textContent =
+      answer.label;
 
-      label.classList.add('selected');
+    input.addEventListener(
+      'change',
+      function () {
+        document
+          .querySelectorAll('.answer-option')
+          .forEach(function (option) {
+            option.classList.remove('selected');
+          });
 
-      questionError.textContent = '';
-    });
+        label.classList.add('selected');
+
+        questionError.textContent = '';
+      }
+    );
 
     label.appendChild(input);
     label.appendChild(marker);
@@ -444,7 +486,8 @@ function renderQuestion() {
 }
 
 function saveCurrentAnswer() {
-  const question = questions[state.currentQuestionIndex];
+  const question =
+    questions[state.currentQuestionIndex];
 
   const selectedInput =
     questionForm.querySelector(
@@ -516,34 +559,45 @@ function createActionButton(
   cssClass,
   eventName
 ) {
-  const link = document.createElement('a');
+  const link =
+    document.createElement('a');
 
   link.className =
     `btn ${cssClass}`;
 
-  link.textContent = label;
+  link.textContent =
+    label;
 
-  link.href = url || '#';
+  link.href =
+    url || '#';
 
   if (url) {
     link.target = '_blank';
-    link.rel = 'noopener noreferrer';
+
+    link.rel =
+      'noopener noreferrer';
   }
 
-  link.addEventListener('click', function (event) {
-    if (!url) {
-      event.preventDefault();
+  link.addEventListener(
+    'click',
+    function (event) {
+      if (!url) {
+        event.preventDefault();
 
-      window.alert(
-        'Ce lien sera activé dès que sa configuration sera terminée.'
-      );
+        window.alert(
+          'Ce lien sera activé dès que sa configuration sera terminée.'
+        );
+      }
+
+      trackEvent(eventName, {
+        score:
+          state.score,
+
+        level:
+          state.level
+      });
     }
-
-    trackEvent(eventName, {
-      score: state.score,
-      level: state.level
-    });
-  });
+  );
 
   return link;
 }
@@ -592,6 +646,13 @@ function renderResult() {
 
   resultActions.innerHTML = '';
 
+  /*
+    ======================================================
+    SCORE FAIBLE : 0 À 39
+    Guide PDF gratuit → WhatsApp
+    ======================================================
+  */
+
   if (state.level === 'faible') {
     resultLevelLabel.textContent =
       'Organisation globalement structurée';
@@ -600,10 +661,10 @@ function renderResult() {
       'Votre entreprise dispose déjà de bonnes bases.';
 
     resultDescription.textContent =
-      'Votre score indique que plusieurs éléments de votre organisation sont déjà maîtrisés. Quelques améliorations ciblées pourraient néanmoins vous permettre de gagner encore du temps et de renforcer votre suivi.';
+      'Votre score indique que plusieurs éléments de votre organisation sont déjà maîtrisés. Quelques améliorations ciblées pourraient néanmoins vous permettre de gagner du temps et de renforcer votre suivi.';
 
     recommendationText.textContent =
-      'Nous vous recommandons de consulter notre guide pratique gratuit et de conserver une routine régulière de classement, de suivi des factures et de mise à jour de vos tableaux.';
+      'Nous vous recommandons de consulter notre guide pratique gratuit. Vous pourrez ensuite échanger avec UADC Management sur WhatsApp si vous souhaitez obtenir une première orientation.';
 
     scoreCircle.style.borderColor =
       '#dcefe1';
@@ -621,13 +682,20 @@ function renderResult() {
       createActionButton(
         'Échanger avec UADC sur WhatsApp',
         getWhatsAppUrl(
-          `Bonjour UADC Management, je viens de terminer l’évaluation de mon entreprise avec un score de ${state.score}/100.`
+          `Bonjour UADC Management, je viens de terminer l’évaluation de mon entreprise avec un score de ${state.score}/100. Je souhaite obtenir une première orientation.`
         ),
         'secondary',
         'whatsapp_click'
       )
     );
   }
+
+  /*
+    ======================================================
+    SCORE MOYEN : 40 À 69
+    Audit offert de 15 minutes → Calendly
+    ======================================================
+  */
 
   if (state.level === 'moyen') {
     resultLevelLabel.textContent =
@@ -637,20 +705,18 @@ function renderResult() {
       'Votre organisation peut être améliorée rapidement.';
 
     resultDescription.textContent =
-      'Votre score montre que certaines difficultés administratives peuvent vous faire perdre du temps, limiter votre visibilité ou ralentir le suivi des paiements.';
+      'Votre score montre que certaines difficultés administratives peuvent vous faire perdre du temps, limiter votre visibilité ou ralentir le suivi de vos paiements.';
 
     recommendationText.textContent =
-      'Nous vous recommandons un échange de 15 minutes afin d’identifier les actions prioritaires et de déterminer si un accompagnement UADC Management est pertinent pour votre entreprise.';
+      'Nous vous recommandons de réserver un audit offert de 15 minutes afin d’identifier les actions prioritaires et de déterminer les améliorations les plus adaptées à votre entreprise.';
 
     scoreCircle.style.borderColor =
       '#f2dfbf';
 
     resultActions.appendChild(
       createActionButton(
-        'Demander mon audit offert de 15 minutes',
-        getWhatsAppUrl(
-          `Bonjour UADC Management, je souhaite demander mon audit offert de 15 minutes. Mon score est de ${state.score}/100.`
-        ),
+        'Réserver mon audit offert de 15 minutes',
+        CONFIG.CALENDLY_AUDIT_URL,
         'primary',
         'audit_booking_click'
       )
@@ -666,6 +732,13 @@ function renderResult() {
     );
   }
 
+  /*
+    ======================================================
+    SCORE ÉLEVÉ : 70 À 100
+    Rendez-vous prioritaire → Calendly
+    ======================================================
+  */
+
   if (state.level === 'eleve') {
     resultLevelLabel.textContent =
       'Accompagnement prioritaire recommandé';
@@ -674,7 +747,7 @@ function renderResult() {
       'Votre organisation administrative nécessite une attention prioritaire.';
 
     resultDescription.textContent =
-      'Votre score révèle plusieurs difficultés importantes dans l’organisation des documents, le suivi administratif ou la visibilité sur votre activité.';
+      'Votre score révèle plusieurs difficultés importantes dans l’organisation de vos documents, le suivi administratif ou la visibilité sur votre activité.';
 
     recommendationText.textContent =
       'Nous vous recommandons de réserver un rendez-vous prioritaire afin d’examiner votre situation et de définir un plan d’amélioration adapté à votre entreprise.';
@@ -685,9 +758,9 @@ function renderResult() {
     resultActions.appendChild(
       createActionButton(
         'Prendre un rendez-vous prioritaire',
-        CONFIG.CALENDLY_URL,
+        CONFIG.CALENDLY_PRIORITY_URL,
         'primary',
-        'booking_click'
+        'priority_booking_click'
       )
     );
 
@@ -695,7 +768,7 @@ function renderResult() {
       createActionButton(
         'Contacter UADC sur WhatsApp',
         getWhatsAppUrl(
-          `Bonjour UADC Management, je viens d’obtenir un score de ${state.score}/100 et je souhaite discuter d’un accompagnement prioritaire.`
+          `Bonjour UADC Management, je viens d’obtenir un score de ${state.score}/100. Je souhaite discuter d’un accompagnement prioritaire.`
         ),
         'secondary',
         'whatsapp_click'
@@ -706,8 +779,14 @@ function renderResult() {
   showScreen('result');
 
   trackEvent('diagnostic_completed', {
-    score: state.score,
-    level: state.level
+    score:
+      state.score,
+
+    level:
+      state.level,
+
+    recommendation:
+      getRecommendationLabel()
   });
 }
 
@@ -717,28 +796,44 @@ function collectContactData() {
 
   state.contact = {
     firstName:
-      String(formData.get('firstName') || '').trim(),
+      String(
+        formData.get('firstName') || ''
+      ).trim(),
 
     lastName:
-      String(formData.get('lastName') || '').trim(),
+      String(
+        formData.get('lastName') || ''
+      ).trim(),
 
     company:
-      String(formData.get('company') || '').trim(),
+      String(
+        formData.get('company') || ''
+      ).trim(),
 
     activity:
-      String(formData.get('activity') || '').trim(),
+      String(
+        formData.get('activity') || ''
+      ).trim(),
 
     city:
-      String(formData.get('city') || '').trim(),
+      String(
+        formData.get('city') || ''
+      ).trim(),
 
     employees:
-      String(formData.get('employees') || '').trim(),
+      String(
+        formData.get('employees') || ''
+      ).trim(),
 
     phone:
-      String(formData.get('phone') || '').trim(),
+      String(
+        formData.get('phone') || ''
+      ).trim(),
 
     email:
-      String(formData.get('email') || '').trim(),
+      String(
+        formData.get('email') || ''
+      ).trim(),
 
     dataConsent:
       formData.get('dataConsent') === 'on',
@@ -799,11 +894,11 @@ function buildLeadPayload() {
 
 function getRecommendationLabel() {
   if (state.level === 'faible') {
-    return 'Guide PDF gratuit et suivi WhatsApp';
+    return 'Guide PDF gratuit puis orientation WhatsApp';
   }
 
   if (state.level === 'moyen') {
-    return 'Audit offert et appel de 15 minutes';
+    return 'Audit offert de 15 minutes via Calendly';
   }
 
   return 'Rendez-vous prioritaire via Calendly';
@@ -833,20 +928,22 @@ async function sendLeadToAutomation(payload) {
     };
   }
 
-  const response = await fetch(
-    CONFIG.N8N_WEBHOOK_URL,
-    {
-      method: 'POST',
+  const response =
+    await fetch(
+      CONFIG.N8N_WEBHOOK_URL,
+      {
+        method:
+          'POST',
 
-      headers: {
-        'Content-Type':
-          'application/json'
-      },
+        headers: {
+          'Content-Type':
+            'application/json'
+        },
 
-      body:
-        JSON.stringify(payload)
-    }
-  );
+        body:
+          JSON.stringify(payload)
+      }
+    );
 
   if (!response.ok) {
     throw new Error(
@@ -866,9 +963,12 @@ startButton.addEventListener(
     state.currentQuestionIndex = 0;
 
     renderQuestion();
+
     showScreen('question');
 
-    trackEvent('diagnostic_started');
+    trackEvent(
+      'diagnostic_started'
+    );
   }
 );
 
@@ -928,6 +1028,7 @@ backToQuestionsButton.addEventListener(
       questions.length - 1;
 
     renderQuestion();
+
     showScreen('question');
   }
 );
@@ -942,6 +1043,7 @@ contactForm.addEventListener(
     }
 
     collectContactData();
+
     calculateScore();
 
     const payload =
@@ -952,10 +1054,16 @@ contactForm.addEventListener(
     try {
       await sendLeadToAutomation(payload);
 
-      trackEvent('lead_created', {
-        score: state.score,
-        level: state.level
-      });
+      trackEvent(
+        'lead_created',
+        {
+          score:
+            state.score,
+
+          level:
+            state.level
+        }
+      );
 
       window.setTimeout(
         renderResult,
@@ -976,12 +1084,17 @@ restartButton.addEventListener(
   'click',
   function () {
     state.currentQuestionIndex = 0;
+
     state.answers = {};
+
     state.contact = {};
+
     state.score = 0;
+
     state.level = '';
 
     questionForm.reset();
+
     contactForm.reset();
 
     showScreen('intro');
