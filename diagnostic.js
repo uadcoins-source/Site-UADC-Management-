@@ -39,7 +39,7 @@ const CONFIG = {
   CALENDLY_PRIORITY_URL:
     'https://calendly.com/support-uadc/diagnostic-gratuit',
 
-  N8N_WEBHOOK_URL: 'https://automate-uadc.app.n8n.cloud/webhook-test/uadc-diagnostic'
+  N8N_WEBHOOK_URL: 'https://automate-uadc.app.n8n.cloud/webhook/uadc-diagnostic'
 };
 
 /*
