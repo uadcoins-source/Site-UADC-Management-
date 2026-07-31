@@ -714,3 +714,15 @@ h3 {
   }
 
 }
+
+.cf-turnstile {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 390px) {
+  .cf-turnstile {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
