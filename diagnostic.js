@@ -1933,7 +1933,7 @@ function collectContactData() {
       formData.get('dataConsent') === 'on',
 
     marketingConsent:
-      formData.get('marketingConsent') === 'on'
+      formData.get('marketingConsent') === 'on',
     
     turnstileToken: 
       String(
@@ -2046,9 +2046,6 @@ function buildLeadPayload() {
 }
 
 /*
-  ==
-/*
-
   ==========================================================
   DÉMARRAGE DU QUESTIONNAIRE
   ==========================================================
