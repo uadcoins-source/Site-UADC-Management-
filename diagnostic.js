@@ -1947,8 +1947,19 @@ function validateContactForm() {
     return false;
   }
 
-  contactError.textContent =
-    '';
+  const turnstileToken =
+    contactForm.querySelector(
+      '[name="cf-turnstile-response"]'
+    )?.value;
+
+  if (!turnstileToken) {
+    contactError.textContent =
+      'Veuillez compléter la vérification de sécurité.';
+
+    return false;
+  }
+
+  contactError.textContent = '';
 
   return true;
 }
