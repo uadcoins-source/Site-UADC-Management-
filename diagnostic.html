@@ -36,6 +36,12 @@
     rel="stylesheet"
     href="diagnostic.css"
   >
+
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
 </head>
 
 <body>
@@ -400,6 +406,13 @@
             </span>
 
           </label>
+
+          <div
+            class="cf-turnstile"
+            data-sitekey="0X4AAAAAAECzcdS4glmLF5t_"
+            data-theme="light"
+            data-action="uadc_diagnostic"
+          ></div>
 
           <p
             id="contact-error"
