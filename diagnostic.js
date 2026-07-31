@@ -2046,73 +2046,9 @@ function buildLeadPayload() {
 }
 
 /*
-  ==========================================================
-  ENVOI VERS N8N
-  ==========================================================
-*/
-
-async function sendLeadToAutomation(payload) {
-  /*
-    Tant que N8N_WEBHOOK_URL est vide :
-
-    - les données sont enregistrées localement ;
-    - aucun PDF n’est généré ;
-    - aucun e-mail n’est envoyé.
-  */
-
-  localStorage.setItem(
-    'uadcLastDiagnostic',
-    JSON.stringify(payload)
-  );
-
-  if (!CONFIG.N8N_WEBHOOK_URL) {
-    console.info(
-      'Mode test : aucun webhook n8n configuré.',
-      payload
-    );
-
-    return {
-      success:
-        true,
-
-      mode:
-        'local'
-    };
-  }
-
-  const response =
-    await fetch(
-      CONFIG.N8N_WEBHOOK_URL,
-      {
-        method:
-          'POST',
-
-        headers: {
-          'Content-Type':
-            'application/json'
-        },
-
-        body:
-          JSON.stringify(payload)
-      }
-    );
-
-  if (!response.ok) {
-    throw new Error(
-      `Erreur du webhook : ${response.status}`
-    );
-  }
-
-  return {
-    success:
-      true,
-
-    mode:
-      'n8n'
-  };
-}
-
+  ==
 /*
+
   ==========================================================
   DÉMARRAGE DU QUESTIONNAIRE
   ==========================================================
