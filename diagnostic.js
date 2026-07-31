@@ -1933,12 +1933,7 @@ function collectContactData() {
       formData.get('dataConsent') === 'on',
 
     marketingConsent:
-      formData.get('marketingConsent') === 'on',
-    
-    turnstileToken: 
-      String(
-        formData.get('cf-turnstile-response') || ''
-      ).trim()
+      formData.get('marketingConsent') === 'on'
   };
 }
 
